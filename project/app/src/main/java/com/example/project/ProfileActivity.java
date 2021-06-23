@@ -29,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private TextView textviewDelete;
     private ImageButton event_stream;
     private ImageButton storage_button;
-
+    private ImageButton event_data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         textviewDelete = (TextView) findViewById(R.id.textviewDelete);
         event_stream=(ImageButton) findViewById(R.id.event_stream);
         storage_button=(ImageButton) findViewById(R.id.storage_button);
+        event_data=(ImageButton)findViewById(R.id.event_Data);
         // evnet_storage=(Button)findViewById(R.id.event_storage);
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -61,6 +62,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         textviewDelete.setOnClickListener(this);
         event_stream.setOnClickListener(this);
         storage_button.setOnClickListener(this);
+        event_data.setOnClickListener(this);
     }
 
     @Override
@@ -105,6 +107,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if(view==storage_button){
             finish();
             startActivity(new Intent(this, StorageActivity.class));
+        }
+        if(view==event_data){
+            finish();
+            startActivity(new Intent(this, DataActivity.class));
         }
     }
 }

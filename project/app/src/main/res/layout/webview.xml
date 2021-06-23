@@ -7,151 +7,373 @@
     android:orientation="vertical"
     tools:context=".CctvActivity">
 
-    <WebView
-        android:id="@+id/cctvWeb"
-        android:layout_width="match_parent"
-        android:layout_height="400dp" />
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           >
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="400dp"
+               android:orientation="vertical"
+               android:gravity="center"
+               >
+               <WebView
+                   android:id="@+id/cctvWeb"
+                   android:layout_width="350dp"
+                   android:layout_height="350dp" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/border">
+           </LinearLayout>
+
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="CCTV제어"
+                   android:textSize="20sp"
+                   android:textColor="#000000"
+                   android:layout_margin="5dp"
+                   />
+               <LinearLayout
+                   android:layout_width="350dp"
+                   android:layout_height="120dp"
+                   android:orientation="vertical"
+                   android:background="@drawable/linearshape"
+                   android:gravity="center"
+                   android:layout_gravity="center"
+                   >
+                   <ImageButton
+                       android:id="@+id/UpButton"
+                       android:layout_width="80dp"
+                       android:layout_height="50dp"
+                       android:background="@drawable/imagebutton_custom"
+                       android:layout_marginBottom="10dp"
+                       android:src="@drawable/ic_up"/>
+
+                   <LinearLayout
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       >
+                       <ImageButton
+                           android:id="@+id/LeftButton"
+                           android:layout_width="80dp"
+                           android:layout_height="50dp"
+                           android:background="@drawable/imagebutton_custom"
+                           android:src="@drawable/ic_left"
+                           android:text="Button"
+                           />
+                       <ImageButton
+                           android:id="@+id/DownButton"
+                           android:layout_width="80dp"
+                           android:layout_height="50dp"
+                           android:background="@drawable/imagebutton_custom"
+                           android:layout_marginLeft="10dp"
+                           android:layout_marginRight="10dp"
+                           android:src="@drawable/ic_down" />
+                       <ImageButton
+                           android:id="@+id/RightButton"
+                           android:layout_width="80dp"
+                           android:layout_height="50dp"
+                           android:background="@drawable/imagebutton_custom"
+                           android:src="@drawable/ic_right" />
+
+                   </LinearLayout>
+
+               </LinearLayout>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="설정 모드"
+                   android:textSize="20sp"
+                   android:textColor="#000000"
+                   android:layout_margin="5dp"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:gravity="center_horizontal"
+                   >
+                   <LinearLayout
+                       android:layout_width="240dp"
+                       android:layout_height="120dp"
+                       android:layout_marginTop="10dp"
+                       android:layout_marginLeft="30dp"
+                       android:background="@drawable/linearshape"
+                       android:orientation="horizontal"
+                       >
+
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical"
+                           android:layout_margin="10dp"
+                           >
+                           <Switch
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="LED on/off"
+                               android:id="@+id/ledswitch"
+                               android:layout_gravity="center_vertical"
+                               />
+
+                           <Switch
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Auto on/off"
+                               android:id="@+id/buzzerSwitch"
+                               />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/border">
+                       </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/border"
-                android:gravity="center"
-                android:text="CCTV 조정"
-                android:textSize="20dp"
+                       <RadioGroup
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_margin="10dp"
+                           android:layout_weight="1"
+                           android:visibility="gone"
+                           android:id="@+id/LED_radioGroup"
+                           >
+                           <RadioButton
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="RED"
+                               android:textColor="#ffffff"
+                               android:id="@+id/led_red"
+                               />
+                           <RadioButton
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="BLU"
+                               android:textColor="#ffffff"
+                               android:id="@+id/led_blue"
+                               />
+                           <RadioButton
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="GRN"
+                               android:textColor="#ffffff"
+                               android:id="@+id/led_green"
+                               />
 
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cctvLeftButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                       </RadioGroup>
+                   </LinearLayout>
+                   <Button
+                       android:id="@+id/callButton"
+                       android:layout_width="wrap_content"
+                       android:layout_height="120dp"
+                       android:gravity="center"
+                       android:text="신고하기"
+                       android:drawableTop="@drawable/ic_baseline_call_24"
+                       android:layout_margin="10dp"
+                       android:background="@drawable/buttonshape"
+                       android:textColor="#ffffff"
+                       android:layout_gravity="center"
+                       android:padding="10dp"
+                       android:textSize="25sp" />
+               </LinearLayout>
+           </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/cctvLeftButton"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:background="@drawable/border"
-                android:src="@drawable/ic_left"
-                android:text="Button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.401"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.715" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="설정값"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_margin="5dp"
+               />
 
-            <ImageButton
-                android:id="@+id/cctvRightButton"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:background="@drawable/border"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.885"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.715"
-                android:src="@drawable/ic_right" />
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_margin="5dp"
+               android:orientation="horizontal"
+               android:gravity="center"
+               android:padding="5dp"
+               >
+               <!--<LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+                   android:background="@drawable/linearshape"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="dust 값"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="0"
+                       android:id="@+id/tv_fdust"
+                       android:textSize="20sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+               </LinearLayout>
+                -->
+               <!--<LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+                   android:background="@drawable/linearshape"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Temp 값"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="0"
+                       android:id="@+id/tv_ftemp"
+                       android:textSize="20sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+               </LinearLayout>
+                -->
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+                   android:background="@drawable/linearshape"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="10dp"
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="현재 CO2수치"
+                       android:textSize="20sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="0"
+                       android:id="@+id/tv_fgas"
+                       android:textSize="20sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+               </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/cctvCenterButton"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:background="@drawable/border"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.643"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.715"
-                android:src="@drawable/ic_down" />
+               <!--<LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:gravity="center"
+                   android:background="@drawable/linearshape"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="5dp"
+                   >
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Humid값"
+                       android:textSize="15sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="0"
+                       android:id="@+id/tv_fhumid"
+                       android:textSize="20sp"
+                       android:textColor="#000000"
+                       android:layout_margin="5dp"
+                       />
+               </LinearLayout>
+            -->
+           </LinearLayout>
+           <!--<TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="미세먼지 차트"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_margin="5dp"
+               />
+           <com.github.mikephil.charting.charts.LineChart
+               android:id="@+id/dust_chart"
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:layout_margin="10dp"
+               />-->
 
-            <ImageButton
-                android:id="@+id/cctvUpButton"
-                android:layout_width="80dp"
-                android:layout_height="50dp"
-                android:background="@drawable/border"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.643"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                android:src="@drawable/ic_up"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="가스수치 차트(유해가스)"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_margin="5dp"
+               />
+           <com.github.mikephil.charting.charts.LineChart
+               android:id="@+id/gas_chart"
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:layout_margin="10dp"
+               />
+           <!--<TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="온도 차트"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_margin="5dp"
+               />
+           <com.github.mikephil.charting.charts.LineChart
+               android:id="@+id/temp_chart"
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:layout_margin="10dp"
+               />
+               -->
+          <!-- <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="습도 차트"
+               android:textSize="20sp"
+               android:textColor="#000000"
+               android:layout_margin="5dp"
+               />
+           <com.github.mikephil.charting.charts.LineChart
+               android:id="@+id/humid_chart"
+               android:layout_width="match_parent"
+               android:layout_height="300dp"
+               android:layout_margin="10dp"
+               />
+               -->
+       </LinearLayout>
+   </ScrollView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/border">
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/border"
-                android:gravity="center"
-                android:text="On/Off"
-
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/cctvOnButton"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <Button
-                android:id="@+id/cctvOnButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="#FFFFFF"
-                android:text="ON"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/cctvOffButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:background="#FFFFFF"
-                android:text="OFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cctvOnButton"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <Button
-            android:id="@+id/callText"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@android:color/white"
-            android:gravity="center"
-            android:text="신고하기"
-            android:textColor="#ffff0000"
-            android:textSize="25sp" />
-    </LinearLayout>
 </LinearLayout>

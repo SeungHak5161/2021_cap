@@ -38,6 +38,7 @@
         <activity android:name="com.example.project.CctvActivity" />
         <activity android:name="com.example.project.StorageActivity" />
         <activity android:name="com.example.project.ImageAdapter" />
+        <activity android:name="com.example.project.DataActivity" />
         <!-- 5월12일 추가 FCM을 위한 -->
         <service android:name="com.example.project.MyFirebaseMessagingService" >
             <intent-filter>
@@ -104,6 +105,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"

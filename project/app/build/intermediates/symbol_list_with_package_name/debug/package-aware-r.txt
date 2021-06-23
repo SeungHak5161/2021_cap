@@ -861,7 +861,9 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_bg
+drawable buttonshape
 drawable circle
+drawable co2_image
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -886,6 +888,7 @@ drawable fire
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_back
+drawable ic_baseline_call_24
 drawable ic_cam
 drawable ic_device
 drawable ic_down
@@ -899,7 +902,9 @@ drawable ic_right
 drawable ic_storage
 drawable ic_up
 drawable ic_water
+drawable imagebutton_custom
 drawable linear
+drawable linearshape
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -921,15 +926,21 @@ drawable vie_bg3
 drawable vie_bg4
 id ALT
 id CCTV
+id CCTV2
 id CTRL
+id DownButton
 id FUNCTION
+id LED_radioGroup
+id LeftButton
 id META
 id NO_DEBUG
+id RightButton
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id UpButton
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -1014,14 +1025,9 @@ id buttonFind
 id buttonLogout
 id buttonPanel
 id buttonSignup
+id buzzerSwitch
 id cache_measures
-id callText
-id cctvCenterButton
-id cctvLeftButton
-id cctvOffButton
-id cctvOnButton
-id cctvRightButton
-id cctvUpButton
+id callButton
 id cctvWeb
 id center
 id center_horizontal
@@ -1068,6 +1074,7 @@ id editTextPassword
 id editTextUserEmail
 id edit_query
 id end
+id event_Data
 id event_stream
 id expand_activities_button
 id expanded_menu
@@ -1076,6 +1083,7 @@ id fill_horizontal
 id fill_vertical
 id flip
 id forever
+id gas_chart
 id gone
 id graph
 id graph_wrap
@@ -1104,6 +1112,10 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id layout
+id led_blue
+id led_green
+id led_red
+id ledswitch
 id left
 id light
 id line1
@@ -1202,7 +1214,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView
 id textView2
 id textView3
 id textView4
@@ -1220,6 +1231,7 @@ id topPanel
 id transitionToEnd
 id transitionToStart
 id triangle
+id tv_fgas
 id txtStatus1
 id txtStatus2
 id txtStatus3
@@ -1280,6 +1292,7 @@ layout activity_profile
 layout activity_storage
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
+layout cctv_record
 layout custom_dialog
 layout item
 layout notification

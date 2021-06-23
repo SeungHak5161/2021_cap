@@ -24,6 +24,7 @@
         <activity android:name=".CctvActivity"/>
         <activity android:name=".StorageActivity"/>
         <activity android:name=".ImageAdapter"/>
+        <activity android:name=".DataActivity"/>
         <!--5월12일 추가 FCM을 위한 -->
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>

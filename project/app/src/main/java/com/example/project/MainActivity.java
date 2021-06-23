@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("token : "+ FirebaseInstanceId.getInstance().getToken());
+       // System.out.println("token : "+ FirebaseInstanceId.getInstance().getToken());
         //initializig firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
 

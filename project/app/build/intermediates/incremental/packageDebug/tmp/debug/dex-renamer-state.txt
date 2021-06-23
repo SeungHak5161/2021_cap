@@ -1,4 +1,4 @@
-#Fri May 21 09:49:41 KST 2021
-base.0=C\:\\Users\\BSH\\Dropbox\\code\\git\\2021_cap\\project\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
+#Thu Jun 24 06:35:47 KST 2021
+base.0=C\:\\Users\\admin\\AndroidStudioProjects\\Cap_project\\project\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
+renamed.0=classes.dex
