@@ -174,15 +174,21 @@ def robot_left():
 def robot_right():
     move_right()
     return 'robot right'
+
 @app.route('/r_forward')
+def robot_forward():
     move_up()
     return 'robot up'
+
 @app.route('/r_backward')
+def robot_backward():
     move_down()
     return 'robot down'
 @app.route('/auto_on')
+def robot_reset():
     servoReset()
     return 'servo reset'
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
     
